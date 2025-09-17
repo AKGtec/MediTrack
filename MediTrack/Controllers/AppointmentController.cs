@@ -94,7 +94,7 @@ namespace MediTrack.Controllers
                 var createdAppointment = await _appointmentService.ScheduleAppointmentAsync(appointment);
                 return CreatedAtAction(
                     nameof(GetAppointment),
-                    new { id = createdAppointment.Id },
+                    new { id = createdAppointment.AppointmentId },
                     createdAppointment);
             }
             catch (Exception ex)

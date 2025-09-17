@@ -1,7 +1,60 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\implimentations\\auditlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\implimentations\\auditlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\interfaces\\iauditlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\interfaces\\iauditlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\data\\mtdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\data\\mtdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\interfaces\\isettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\interfaces\\isettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\implimentations\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\implimentations\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +79,175 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuditLogService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\AuditLogService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Implimentations\\AuditLogService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\AuditLogService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Implimentations\\AuditLogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:43:42.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\appsettings.json",
+              "RelativeDocumentMoniker": "MediTrack\\appsettings.json",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\appsettings.json",
+              "RelativeToolTip": "MediTrack\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-17T15:36:33.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Models\\Appointment.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Appointment.cs",
+              "RelativeToolTip": "MediTrack\\Models\\Appointment.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA5wCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:36:15.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "MediTrack\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAIwLgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:36:02.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Payment.cs",
+              "RelativeToolTip": "MediTrack\\Models\\Payment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:13:30.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MTDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Data\\MTDbContext.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Data\\MTDbContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Data\\MTDbContext.cs",
+              "RelativeToolTip": "MediTrack\\Data\\MTDbContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAmwDMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:12:43.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Interfaces\\IPaymentService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\IPaymentService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Interfaces\\IPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:12:25.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\INotificationService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Interfaces\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\INotificationService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Interfaces\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:12:15.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ISettingsService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\ISettingsService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Interfaces\\ISettingsService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\ISettingsService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Interfaces\\ISettingsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:12:03.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuditLogService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\IAuditLogService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Interfaces\\IAuditLogService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Interfaces\\IAuditLogService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Interfaces\\IAuditLogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:11:50.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Program.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Program.cs",
+              "RelativeToolTip": "MediTrack\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAEwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:11:33.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Invoice.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Models\\Invoice.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Models\\Invoice.cs",
+              "RelativeToolTip": "MediTrack\\Models\\Invoice.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:09:51.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Services\\Implimentations\\InvoiceService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\InvoiceService.cs",
+              "RelativeToolTip": "MediTrack\\Services\\Implimentations\\InvoiceService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA3wC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:08:50.011Z",
+              "EditorCaption": ""
             }
           ]
         }

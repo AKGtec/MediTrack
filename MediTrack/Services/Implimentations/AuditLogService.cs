@@ -1,38 +1,31 @@
-﻿using MediTrack.Data;
-using MediTrack.Models;
+﻿using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using MediTrack.Services.Interfaces;
 
-namespace MediTrack.Repositories.Implementations // Fixed typo: "Implementaions" -> "Implementations"
+namespace MediTrack.Services.Implimentations
 {
-    public class AuditLogRepository : IAuditLogRepository
+    public class AuditLogService : IAuditLogService
     {
-        private readonly MTDbContext _context;
+        private readonly IAuditLogRepository _auditLogRepository;
 
-        public AuditLogRepository(MTDbContext context)
+        public AuditLogService(IAuditLogRepository auditLogRepository)
         {
-            _context = context;
+            _auditLogRepository = auditLogRepository;
         }
 
-        public async Task<AuditLog?> GetByIdAsync(int logId)
+        public async Task<AuditLog?> GetLogByIdAsync(int logId)
         {
-            return await _context.AuditLogs
-                .Include(a => a.User)
-                .FirstOrDefaultAsync(a => a.LogId == logId);
+            return await _auditLogRepository.GetByIdAsync(logId);
         }
 
-        public async Task<IEnumerable<AuditLog>> GetByUserIdAsync(int userId)
+        public async Task<IEnumerable<AuditLog>> GetLogsByUserAsync(int userId)
         {
-            return await _context.AuditLogs
-                .Where(a => a.UserId == userId)
-                .OrderByDescending(a => a.Timestamp)
-                .ToListAsync();
+            return await _auditLogRepository.GetByUserIdAsync(userId);
         }
 
-        public async Task AddAsync(AuditLog log)
+        public async Task AddLogAsync(AuditLog log)
         {
-            await _context.AuditLogs.AddAsync(log);
-            await _context.SaveChangesAsync();
+            await _auditLogRepository.AddAsync(log);
         }
     }
 }

@@ -35,9 +35,14 @@ namespace MediTrack.Services.Implimentations
             if (invoice == null)
                 throw new KeyNotFoundException("Invoice not found.");
 
-            invoice.Status = status;
+            // Convert string to InvoiceStatus enum
+            if (!Enum.TryParse<Enums.InvoiceStatus>(status, true, out var parsedStatus))
+                throw new ArgumentException("Invalid invoice status.", nameof(status));
+
+            invoice.Status = parsedStatus;
             await _invoiceRepository.UpdateAsync(invoice);
             return invoice;
         }
+
     }
 }

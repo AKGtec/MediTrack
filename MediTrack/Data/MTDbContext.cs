@@ -1,5 +1,6 @@
 ﻿using MediTrack.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders; // pour EntityTypeBuilder et IndexBuilder
 
 namespace MediTrack.Data
 {
