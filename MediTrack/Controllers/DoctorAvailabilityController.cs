@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/DoctorAvailability/Doctor/5
         [HttpGet("Doctor/{doctorId:int}")]
-        public async Task<ActionResult<IEnumerable<DoctorAvailability>>> GetAvailabilityByDoctor(int doctorId)
+        public async Task<ActionResult<IEnumerable<DoctorAvailabilityDto>>> GetAvailabilityByDoctor(int doctorId)
         {
             var availability = await _availabilityService.GetAvailabilityByDoctorAsync(doctorId);
             return Ok(availability);
@@ -25,23 +25,26 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/DoctorAvailability
         [HttpPost]
-        public async Task<ActionResult<DoctorAvailability>> AddAvailability([FromBody] DoctorAvailability availability)
+        public async Task<ActionResult<DoctorAvailabilityDto>> AddAvailability([FromBody] CreateDoctorAvailabilityDto dto)
         {
-            if (availability == null)
+            if (dto == null)
                 return BadRequest("Availability cannot be null.");
 
-            var created = await _availabilityService.AddAvailabilityAsync(availability);
+            var created = await _availabilityService.AddAvailabilityAsync(dto);
             return CreatedAtAction(nameof(GetAvailabilityByDoctor), new { doctorId = created.DoctorId }, created);
         }
 
         // PUT: api/DoctorAvailability/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<DoctorAvailability>> UpdateAvailability(int id, [FromBody] DoctorAvailability availability)
+        public async Task<ActionResult<DoctorAvailabilityDto>> UpdateAvailability(int id, [FromBody] UpdateDoctorAvailabilityDto dto)
         {
-            if (availability == null || availability.AvailabilityId != id)
+            if (dto == null)
                 return BadRequest("Invalid availability data.");
 
-            var updated = await _availabilityService.UpdateAvailabilityAsync(availability);
+            var updated = await _availabilityService.UpdateAvailabilityAsync(id, dto);
+            if (updated == null)
+                return NotFound();
+
             return Ok(updated);
         }
 

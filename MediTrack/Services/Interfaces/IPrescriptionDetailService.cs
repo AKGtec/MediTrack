@@ -1,12 +1,12 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface IPrescriptionDetailService
     {
-        Task<IEnumerable<PrescriptionDetail>> GetDetailsByPrescriptionAsync(int prescriptionId);
-        Task<PrescriptionDetail> AddDetailAsync(PrescriptionDetail detail);
-        Task<PrescriptionDetail> UpdateDetailAsync(PrescriptionDetail detail);
+        Task<IEnumerable<PrescriptionDetailDto>> GetDetailsByPrescriptionAsync(int prescriptionId);
+        Task<PrescriptionDetailDto> AddDetailAsync(CreatePrescriptionDetailDto dto);
+        Task<PrescriptionDetailDto?> UpdateDetailAsync(int id, UpdatePrescriptionDetailDto dto);
         Task<bool> DeleteDetailAsync(int detailId);
     }
 }

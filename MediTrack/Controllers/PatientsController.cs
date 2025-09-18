@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Patients
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Patient>>> GetAllPatients()
+        public async Task<ActionResult<IEnumerable<PatientDto>>> GetAllPatients()
         {
             var patients = await _patientService.GetAllPatientsAsync();
             return Ok(patients);
@@ -25,7 +25,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Patients/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Patient>> GetPatientById(int id)
+        public async Task<ActionResult<PatientDto>> GetPatientById(int id)
         {
             var patient = await _patientService.GetPatientByIdAsync(id);
             if (patient == null)
@@ -36,23 +36,26 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/Patients
         [HttpPost]
-        public async Task<ActionResult<Patient>> CreatePatient([FromBody] Patient patient)
+        public async Task<ActionResult<PatientDto>> CreatePatient([FromBody] CreatePatientDto dto)
         {
-            if (patient == null)
+            if (dto == null)
                 return BadRequest("Patient data cannot be null.");
 
-            var createdPatient = await _patientService.CreatePatientAsync(patient);
+            var createdPatient = await _patientService.CreatePatientAsync(dto);
             return CreatedAtAction(nameof(GetPatientById), new { id = createdPatient.UserId }, createdPatient);
         }
 
         // PUT: api/Patients/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<Patient>> UpdatePatient(int id, [FromBody] Patient patient)
+        public async Task<ActionResult<PatientDto>> UpdatePatient(int id, [FromBody] UpdatePatientDto dto)
         {
-            if (patient == null || patient.UserId != id)
+            if (dto == null)
                 return BadRequest("Invalid patient data.");
 
-            var updatedPatient = await _patientService.UpdatePatientAsync(patient);
+            var updatedPatient = await _patientService.UpdatePatientAsync(id, dto);
+            if (updatedPatient == null)
+                return NotFound();
+
             return Ok(updatedPatient);
         }
 

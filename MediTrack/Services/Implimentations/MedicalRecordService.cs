@@ -1,4 +1,6 @@
-﻿using MediTrack.Models;
+﻿using AutoMapper;
+using MediTrack.DTOs;
+using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Interfaces;
 
@@ -7,33 +9,44 @@ namespace MediTrack.Services.Implimentations
     public class MedicalRecordService : IMedicalRecordService
     {
         private readonly IMedicalRecordRepository _medicalRecordRepository;
+        private readonly IMapper _mapper;
 
-        public MedicalRecordService(IMedicalRecordRepository medicalRecordRepository)
+        public MedicalRecordService(IMedicalRecordRepository medicalRecordRepository, IMapper mapper)
         {
             _medicalRecordRepository = medicalRecordRepository;
+            _mapper = mapper;
         }
 
-        public async Task<MedicalRecord?> GetRecordByIdAsync(int recordId)
+        public async Task<MedicalRecordDto?> GetRecordByIdAsync(int recordId)
         {
-            return await _medicalRecordRepository.GetByIdAsync(recordId);
+            var record = await _medicalRecordRepository.GetByIdAsync(recordId);
+            return record == null ? null : _mapper.Map<MedicalRecordDto>(record);
         }
 
-        public async Task<IEnumerable<MedicalRecord>> GetRecordsByPatientAsync(int patientId)
+        public async Task<IEnumerable<MedicalRecordDto>> GetRecordsByPatientAsync(int patientId)
         {
-            return await _medicalRecordRepository.GetByPatientIdAsync(patientId);
+            var records = await _medicalRecordRepository.GetByPatientIdAsync(patientId);
+            return _mapper.Map<IEnumerable<MedicalRecordDto>>(records);
         }
 
-        public async Task<MedicalRecord> CreateRecordAsync(MedicalRecord record)
+        public async Task<MedicalRecordDto> CreateRecordAsync(CreateMedicalRecordDto dto)
         {
+            var record = _mapper.Map<MedicalRecord>(dto);
             record.CreatedAt = DateTime.UtcNow;
             await _medicalRecordRepository.AddAsync(record);
-            return record;
+            return _mapper.Map<MedicalRecordDto>(record);
         }
 
-        public async Task<MedicalRecord> UpdateRecordAsync(MedicalRecord record)
+        public async Task<MedicalRecordDto?> UpdateRecordAsync(int id, UpdateMedicalRecordDto dto)
         {
-            await _medicalRecordRepository.UpdateAsync(record);
-            return record;
+            var existing = await _medicalRecordRepository.GetByIdAsync(id);
+            if (existing == null)
+                return null;
+
+            _mapper.Map(dto, existing);
+            await _medicalRecordRepository.UpdateAsync(existing);
+
+            return _mapper.Map<MedicalRecordDto>(existing);
         }
     }
 }

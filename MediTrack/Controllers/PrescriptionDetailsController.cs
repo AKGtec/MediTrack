@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/PrescriptionDetails/Prescription/5
         [HttpGet("Prescription/{prescriptionId:int}")]
-        public async Task<ActionResult<IEnumerable<PrescriptionDetail>>> GetDetailsByPrescription(int prescriptionId)
+        public async Task<ActionResult<IEnumerable<PrescriptionDetailDto>>> GetDetailsByPrescription(int prescriptionId)
         {
             var details = await _prescriptionDetailService.GetDetailsByPrescriptionAsync(prescriptionId);
             return Ok(details);
@@ -25,23 +25,26 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/PrescriptionDetails
         [HttpPost]
-        public async Task<ActionResult<PrescriptionDetail>> AddDetail([FromBody] PrescriptionDetail detail)
+        public async Task<ActionResult<PrescriptionDetailDto>> AddDetail([FromBody] CreatePrescriptionDetailDto dto)
         {
-            if (detail == null)
+            if (dto == null)
                 return BadRequest("Prescription detail cannot be null.");
 
-            var createdDetail = await _prescriptionDetailService.AddDetailAsync(detail);
+            var createdDetail = await _prescriptionDetailService.AddDetailAsync(dto);
             return CreatedAtAction(nameof(GetDetailsByPrescription), new { prescriptionId = createdDetail.PrescriptionId }, createdDetail);
         }
 
         // PUT: api/PrescriptionDetails/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<PrescriptionDetail>> UpdateDetail(int id, [FromBody] PrescriptionDetail detail)
+        public async Task<ActionResult<PrescriptionDetailDto>> UpdateDetail(int id, [FromBody] UpdatePrescriptionDetailDto dto)
         {
-            if (detail == null || detail.PrescriptionDetailId != id)
+            if (dto == null)
                 return BadRequest("Invalid prescription detail data.");
 
-            var updatedDetail = await _prescriptionDetailService.UpdateDetailAsync(detail);
+            var updatedDetail = await _prescriptionDetailService.UpdateDetailAsync(id, dto);
+            if (updatedDetail == null)
+                return NotFound();
+
             return Ok(updatedDetail);
         }
 

@@ -1,12 +1,12 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface ILabTestService
     {
-        Task<LabTest?> GetLabTestByIdAsync(int labTestId);
-        Task<IEnumerable<LabTest>> GetLabTestsByRecordAsync(int recordId);
-        Task<LabTest> AddLabTestAsync(LabTest test);
-        Task<LabTest> UpdateLabTestAsync(LabTest test);
+        Task<LabTestDto?> GetLabTestByIdAsync(int labTestId);
+        Task<IEnumerable<LabTestDto>> GetLabTestsByRecordAsync(int recordId);
+        Task<LabTestDto> AddLabTestAsync(CreateLabTestDto dto);
+        Task<LabTestDto?> UpdateLabTestAsync(int id, UpdateLabTestDto dto);
     }
 }

@@ -42,6 +42,11 @@ namespace MediTrack.Repositories.Implementaions
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<PrescriptionDetail?> GetByIdAsync(int id)
+        {
+            return await _context.PrescriptionDetails.FindAsync(id);
+        }
     }
    
 }

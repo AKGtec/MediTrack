@@ -1,12 +1,12 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface INotificationService
     {
-        Task<Notification?> GetNotificationByIdAsync(int notificationId);
-        Task<IEnumerable<Notification>> GetNotificationsByUserAsync(int userId);
-        Task<Notification> SendNotificationAsync(Notification notification);
-        Task<bool> MarkAsReadAsync(int notificationId);
+        Task<NotificationDto?> GetNotificationByIdAsync(int notificationId);
+        Task<IEnumerable<NotificationDto>> GetNotificationsByUserAsync(int userId);
+        Task<NotificationDto> SendNotificationAsync(CreateNotificationDto dto);
+        Task<NotificationDto?> MarkAsReadAsync(int notificationId, UpdateNotificationStatusDto dto);
     }
 }

@@ -8,5 +8,7 @@ namespace MediTrack.Repositories.Interfaces
         Task AddAsync(PrescriptionDetail detail);
         Task UpdateAsync(PrescriptionDetail detail);
         Task DeleteAsync(int detailId);
+        Task<PrescriptionDetail?> GetByIdAsync(int id);
+
     }
 }

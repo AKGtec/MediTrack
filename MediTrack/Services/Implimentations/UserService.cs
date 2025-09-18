@@ -1,49 +1,71 @@
-﻿using MediTrack.Models;
+﻿using AutoMapper;
+using MediTrack.DTOs;
+using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Interfaces;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MediTrack.Services.Implimentations
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public async Task<User?> GetUserByIdAsync(int userId)
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            return await _userRepository.GetByIdAsync(userId);
+            var users = await _userRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 
-        public async Task<User?> GetUserByEmailAsync(string email)
+        public async Task<UserDto?> GetUserByIdAsync(int userId)
         {
-            return await _userRepository.GetByEmailAsync(email);
+            var user = await _userRepository.GetByIdAsync(userId);
+            return user == null ? null : _mapper.Map<UserDto>(user);
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<UserDto?> GetUserByEmailAsync(string email)
         {
-            return await _userRepository.GetAllAsync();
+            var user = await _userRepository.GetByEmailAsync(email);
+            return user == null ? null : _mapper.Map<UserDto>(user);
         }
 
-        public async Task<User> CreateUserAsync(User user)
+        public async Task<UserDto> CreateUserAsync(UserRegisterDto dto)
         {
+            var user = _mapper.Map<User>(dto);
+            user.PasswordHash = HashPassword(dto.Password);
+            user.Role = Enums.Role.Patient; // default role
             await _userRepository.AddAsync(user);
-            return user;
+            return _mapper.Map<UserDto>(user);
         }
 
-        public async Task<User> UpdateUserAsync(User user)
+        public async Task<UserDto> UpdateUserAsync(UserDto dto)
         {
+            var user = _mapper.Map<User>(dto);
+            user.UpdatedAt = DateTime.UtcNow;
             await _userRepository.UpdateAsync(user);
-            return user;
+            return _mapper.Map<UserDto>(user);
         }
 
         public async Task<bool> DeleteUserAsync(int userId)
         {
             await _userRepository.DeleteAsync(userId);
             return true;
+        }
+
+        private string HashPassword(string password)
+        {
+            using var sha256 = SHA256.Create();
+            var bytes = Encoding.UTF8.GetBytes(password);
+            var hash = sha256.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
         }
     }
 }

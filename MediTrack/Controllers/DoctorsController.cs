@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Doctors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Doctor>>> GetAllDoctors()
+        public async Task<ActionResult<IEnumerable<DoctorDto>>> GetAllDoctors()
         {
             var doctors = await _doctorService.GetAllDoctorsAsync();
             return Ok(doctors);
@@ -25,7 +25,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Doctors/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Doctor>> GetDoctorById(int id)
+        public async Task<ActionResult<DoctorDto>> GetDoctorById(int id)
         {
             var doctor = await _doctorService.GetDoctorByIdAsync(id);
             if (doctor == null)
@@ -36,23 +36,26 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/Doctors
         [HttpPost]
-        public async Task<ActionResult<Doctor>> CreateDoctor([FromBody] Doctor doctor)
+        public async Task<ActionResult<DoctorDto>> CreateDoctor([FromBody] CreateDoctorDto dto)
         {
-            if (doctor == null)
+            if (dto == null)
                 return BadRequest("Doctor data is null.");
 
-            var createdDoctor = await _doctorService.CreateDoctorAsync(doctor);
+            var createdDoctor = await _doctorService.CreateDoctorAsync(dto);
             return CreatedAtAction(nameof(GetDoctorById), new { id = createdDoctor.UserId }, createdDoctor);
         }
 
         // PUT: api/Doctors/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<Doctor>> UpdateDoctor(int id, [FromBody] Doctor doctor)
+        public async Task<ActionResult<DoctorDto>> UpdateDoctor(int id, [FromBody] UpdateDoctorDto dto)
         {
-            if (doctor == null || doctor.UserId != id)
+            if (dto == null)
                 return BadRequest("Invalid doctor data.");
 
-            var updatedDoctor = await _doctorService.UpdateDoctorAsync(doctor);
+            var updatedDoctor = await _doctorService.UpdateDoctorAsync(id, dto);
+            if (updatedDoctor == null)
+                return NotFound();
+
             return Ok(updatedDoctor);
         }
 

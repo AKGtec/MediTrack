@@ -1,12 +1,12 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface IInvoiceService
     {
-        Task<Invoice?> GetInvoiceByIdAsync(int invoiceId);
-        Task<IEnumerable<Invoice>> GetInvoicesByPatientAsync(int patientId);
-        Task<Invoice> CreateInvoiceAsync(Invoice invoice);
-        Task<Invoice> UpdateInvoiceStatusAsync(int invoiceId, string status);
+        Task<InvoiceDto?> GetInvoiceByIdAsync(int invoiceId);
+        Task<IEnumerable<InvoiceDto>> GetInvoicesByPatientAsync(int patientId);
+        Task<InvoiceDto> CreateInvoiceAsync(CreateInvoiceDto dto);
+        Task<InvoiceDto?> UpdateInvoiceStatusAsync(int invoiceId, UpdateInvoiceStatusDto dto);
     }
 }

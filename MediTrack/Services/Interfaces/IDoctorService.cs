@@ -1,13 +1,13 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface IDoctorService
     {
-        Task<Doctor?> GetDoctorByIdAsync(int doctorId);
-        Task<IEnumerable<Doctor>> GetAllDoctorsAsync();
-        Task<Doctor> CreateDoctorAsync(Doctor doctor);
-        Task<Doctor> UpdateDoctorAsync(Doctor doctor);
+        Task<IEnumerable<DoctorDto>> GetAllDoctorsAsync();
+        Task<DoctorDto?> GetDoctorByIdAsync(int doctorId);
+        Task<DoctorDto> CreateDoctorAsync(CreateDoctorDto dto);
+        Task<DoctorDto?> UpdateDoctorAsync(int id, UpdateDoctorDto dto);
         Task<bool> DeleteDoctorAsync(int doctorId);
     }
 }

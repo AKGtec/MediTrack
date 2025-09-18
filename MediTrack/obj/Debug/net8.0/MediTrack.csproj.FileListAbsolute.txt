@@ -104,3 +104,4 @@ C:\Users\Dell\Desktop\Microservices.NET\MediTrack\MediTrack\obj\Debug\net8.0\ref
 C:\Users\Dell\Desktop\Microservices.NET\MediTrack\MediTrack\obj\Debug\net8.0\MediTrack.pdb
 C:\Users\Dell\Desktop\Microservices.NET\MediTrack\MediTrack\obj\Debug\net8.0\MediTrack.genruntimeconfig.cache
 C:\Users\Dell\Desktop\Microservices.NET\MediTrack\MediTrack\obj\Debug\net8.0\ref\MediTrack.dll
+C:\Users\Dell\Desktop\Microservices.NET\MediTrack\MediTrack\bin\Debug\net8.0\AutoMapper.dll

@@ -1,12 +1,12 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface IMedicalRecordService
     {
-        Task<MedicalRecord?> GetRecordByIdAsync(int recordId);
-        Task<IEnumerable<MedicalRecord>> GetRecordsByPatientAsync(int patientId);
-        Task<MedicalRecord> CreateRecordAsync(MedicalRecord record);
-        Task<MedicalRecord> UpdateRecordAsync(MedicalRecord record);
+        Task<MedicalRecordDto?> GetRecordByIdAsync(int recordId);
+        Task<IEnumerable<MedicalRecordDto>> GetRecordsByPatientAsync(int patientId);
+        Task<MedicalRecordDto> CreateRecordAsync(CreateMedicalRecordDto dto);
+        Task<MedicalRecordDto?> UpdateRecordAsync(int id, UpdateMedicalRecordDto dto);
     }
 }

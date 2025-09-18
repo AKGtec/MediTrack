@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/LabTests/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<LabTest>> GetLabTestById(int id)
+        public async Task<ActionResult<LabTestDto>> GetLabTestById(int id)
         {
             var test = await _labTestService.GetLabTestByIdAsync(id);
             if (test == null)
@@ -28,7 +28,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/LabTests/Record/5
         [HttpGet("Record/{recordId:int}")]
-        public async Task<ActionResult<IEnumerable<LabTest>>> GetLabTestsByRecord(int recordId)
+        public async Task<ActionResult<IEnumerable<LabTestDto>>> GetLabTestsByRecord(int recordId)
         {
             var tests = await _labTestService.GetLabTestsByRecordAsync(recordId);
             return Ok(tests);
@@ -36,23 +36,26 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/LabTests
         [HttpPost]
-        public async Task<ActionResult<LabTest>> AddLabTest([FromBody] LabTest test)
+        public async Task<ActionResult<LabTestDto>> AddLabTest([FromBody] CreateLabTestDto dto)
         {
-            if (test == null)
+            if (dto == null)
                 return BadRequest("Lab test data cannot be null.");
 
-            var createdTest = await _labTestService.AddLabTestAsync(test);
+            var createdTest = await _labTestService.AddLabTestAsync(dto);
             return CreatedAtAction(nameof(GetLabTestById), new { id = createdTest.LabTestId }, createdTest);
         }
 
         // PUT: api/LabTests/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<LabTest>> UpdateLabTest(int id, [FromBody] LabTest test)
+        public async Task<ActionResult<LabTestDto>> UpdateLabTest(int id, [FromBody] UpdateLabTestDto dto)
         {
-            if (test == null || test.LabTestId != id)
+            if (dto == null)
                 return BadRequest("Invalid lab test data.");
 
-            var updatedTest = await _labTestService.UpdateLabTestAsync(test);
+            var updatedTest = await _labTestService.UpdateLabTestAsync(id, dto);
+            if (updatedTest == null)
+                return NotFound();
+
             return Ok(updatedTest);
         }
     }

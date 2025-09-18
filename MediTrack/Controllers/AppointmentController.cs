@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MediTrack.Models;
+using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 
 namespace MediTrack.Controllers
@@ -21,7 +21,7 @@ namespace MediTrack.Controllers
         /// <param name="id">Appointment ID</param>
         /// <returns>Appointment details</returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<Appointment>> GetAppointment(int id)
+        public async Task<ActionResult<AppointmentDto>> GetAppointment(int id)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace MediTrack.Controllers
         /// <param name="doctorId">Doctor ID</param>
         /// <returns>List of appointments for the doctor</returns>
         [HttpGet("doctor/{doctorId}")]
-        public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointmentsByDoctor(int doctorId)
+        public async Task<ActionResult<IEnumerable<AppointmentDto>>> GetAppointmentsByDoctor(int doctorId)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace MediTrack.Controllers
         /// <param name="patientId">Patient ID</param>
         /// <returns>List of appointments for the patient</returns>
         [HttpGet("patient/{patientId}")]
-        public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointmentsByPatient(int patientId)
+        public async Task<ActionResult<IEnumerable<AppointmentDto>>> GetAppointmentsByPatient(int patientId)
         {
             try
             {
@@ -79,10 +79,10 @@ namespace MediTrack.Controllers
         /// <summary>
         /// Schedule a new appointment
         /// </summary>
-        /// <param name="appointment">Appointment details</param>
+        /// <param name="createAppointmentDto">Appointment details</param>
         /// <returns>Created appointment</returns>
         [HttpPost]
-        public async Task<ActionResult<Appointment>> ScheduleAppointment([FromBody] Appointment appointment)
+        public async Task<ActionResult<AppointmentDto>> ScheduleAppointment([FromBody] CreateAppointmentDto createAppointmentDto)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace MediTrack.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var createdAppointment = await _appointmentService.ScheduleAppointmentAsync(appointment);
+                var createdAppointment = await _appointmentService.ScheduleAppointmentAsync(createAppointmentDto);
                 return CreatedAtAction(
                     nameof(GetAppointment),
                     new { id = createdAppointment.AppointmentId },
@@ -107,19 +107,19 @@ namespace MediTrack.Controllers
         /// Update appointment status
         /// </summary>
         /// <param name="id">Appointment ID</param>
-        /// <param name="status">New status</param>
+        /// <param name="updateStatusDto">New status</param>
         /// <returns>Updated appointment</returns>
         [HttpPut("{id}/status")]
-        public async Task<ActionResult<Appointment>> UpdateAppointmentStatus(int id, [FromBody] string status)
+        public async Task<ActionResult<AppointmentDto>> UpdateAppointmentStatus(int id, [FromBody] UpdateAppointmentStatusDto updateStatusDto)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(status))
+                if (!ModelState.IsValid)
                 {
-                    return BadRequest("Status cannot be empty");
+                    return BadRequest(ModelState);
                 }
 
-                var updatedAppointment = await _appointmentService.UpdateAppointmentStatusAsync(id, status);
+                var updatedAppointment = await _appointmentService.UpdateAppointmentStatusAsync(id, updateStatusDto);
                 return Ok(updatedAppointment);
             }
             catch (KeyNotFoundException ex)

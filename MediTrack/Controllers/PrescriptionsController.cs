@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,18 +17,17 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Prescriptions/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Prescription>> GetPrescriptionById(int id)
+        public async Task<ActionResult<PrescriptionDto>> GetPrescriptionById(int id)
         {
             var prescription = await _prescriptionService.GetPrescriptionByIdAsync(id);
-            if (prescription == null)
-                return NotFound();
+            if (prescription == null) return NotFound();
 
             return Ok(prescription);
         }
 
         // GET: api/Prescriptions/Patient/5
         [HttpGet("Patient/{patientId:int}")]
-        public async Task<ActionResult<IEnumerable<Prescription>>> GetPrescriptionsByPatient(int patientId)
+        public async Task<ActionResult<IEnumerable<PrescriptionDto>>> GetPrescriptionsByPatient(int patientId)
         {
             var prescriptions = await _prescriptionService.GetPrescriptionsByPatientAsync(patientId);
             return Ok(prescriptions);
@@ -36,13 +35,12 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/Prescriptions
         [HttpPost]
-        public async Task<ActionResult<Prescription>> CreatePrescription([FromBody] Prescription prescription)
+        public async Task<ActionResult<PrescriptionDto>> CreatePrescription([FromBody] CreatePrescriptionDto dto)
         {
-            if (prescription == null)
-                return BadRequest("Prescription cannot be null.");
+            if (dto == null) return BadRequest("Prescription data cannot be null.");
 
-            var createdPrescription = await _prescriptionService.CreatePrescriptionAsync(prescription);
-            return CreatedAtAction(nameof(GetPrescriptionById), new { id = createdPrescription.PrescriptionId }, createdPrescription);
+            var created = await _prescriptionService.CreatePrescriptionAsync(dto);
+            return CreatedAtAction(nameof(GetPrescriptionById), new { id = created.PrescriptionId }, created);
         }
     }
 }

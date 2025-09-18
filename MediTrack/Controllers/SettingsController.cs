@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,55 +15,41 @@ namespace MediTrack.Presentation.Controllers
             _settingsService = settingsService;
         }
 
-        // GET: api/Settings
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Setting>>> GetAllSettings()
+        public async Task<ActionResult<IEnumerable<SettingDto>>> GetAllSettings()
         {
             var settings = await _settingsService.GetAllSettingsAsync();
             return Ok(settings);
         }
 
-        // GET: api/Settings/Key/SomeKey
         [HttpGet("Key/{key}")]
-        public async Task<ActionResult<Setting>> GetSettingByKey(string key)
+        public async Task<ActionResult<SettingDto>> GetSettingByKey(string key)
         {
             var setting = await _settingsService.GetSettingByKeyAsync(key);
-            if (setting == null)
-                return NotFound();
-
+            if (setting == null) return NotFound();
             return Ok(setting);
         }
 
-        // POST: api/Settings
         [HttpPost]
-        public async Task<ActionResult<Setting>> AddSetting([FromBody] Setting setting)
+        public async Task<ActionResult<SettingDto>> AddSetting([FromBody] CreateSettingDto dto)
         {
-            if (setting == null)
-                return BadRequest("Setting cannot be null.");
-
-            var createdSetting = await _settingsService.AddSettingAsync(setting);
-            return CreatedAtAction(nameof(GetSettingByKey), new { key = createdSetting.Key }, createdSetting);
+            var created = await _settingsService.AddSettingAsync(dto);
+            return CreatedAtAction(nameof(GetSettingByKey), new { key = created.Key }, created);
         }
 
-        // PUT: api/Settings/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<Setting>> UpdateSetting(int id, [FromBody] Setting setting)
+        public async Task<ActionResult<SettingDto>> UpdateSetting(int id, [FromBody] UpdateSettingDto dto)
         {
-            if (setting == null || setting.SettingId != id)
-                return BadRequest("Invalid setting data.");
-
-            var updatedSetting = await _settingsService.UpdateSettingAsync(setting);
-            return Ok(updatedSetting);
+            if (dto == null || dto.SettingId != id) return BadRequest();
+            var updated = await _settingsService.UpdateSettingAsync(dto);
+            return Ok(updated);
         }
 
-        // DELETE: api/Settings/5
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> DeleteSetting(int id)
         {
             var result = await _settingsService.DeleteSettingAsync(id);
-            if (!result)
-                return NotFound();
-
+            if (!result) return NotFound();
             return NoContent();
         }
     }

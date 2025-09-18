@@ -1,4 +1,4 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 using MediTrack.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +17,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Notifications/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Notification>> GetNotificationById(int id)
+        public async Task<ActionResult<NotificationDto>> GetNotificationById(int id)
         {
             var notification = await _notificationService.GetNotificationByIdAsync(id);
             if (notification == null)
@@ -28,7 +28,7 @@ namespace MediTrack.Presentation.Controllers
 
         // GET: api/Notifications/User/5
         [HttpGet("User/{userId:int}")]
-        public async Task<ActionResult<IEnumerable<Notification>>> GetNotificationsByUser(int userId)
+        public async Task<ActionResult<IEnumerable<NotificationDto>>> GetNotificationsByUser(int userId)
         {
             var notifications = await _notificationService.GetNotificationsByUserAsync(userId);
             return Ok(notifications);
@@ -36,24 +36,27 @@ namespace MediTrack.Presentation.Controllers
 
         // POST: api/Notifications
         [HttpPost]
-        public async Task<ActionResult<Notification>> SendNotification([FromBody] Notification notification)
+        public async Task<ActionResult<NotificationDto>> SendNotification([FromBody] CreateNotificationDto dto)
         {
-            if (notification == null)
+            if (dto == null)
                 return BadRequest("Notification cannot be null.");
 
-            var sentNotification = await _notificationService.SendNotificationAsync(notification);
+            var sentNotification = await _notificationService.SendNotificationAsync(dto);
             return CreatedAtAction(nameof(GetNotificationById), new { id = sentNotification.NotificationId }, sentNotification);
         }
 
         // PUT: api/Notifications/5/Read
         [HttpPut("{id:int}/Read")]
-        public async Task<ActionResult> MarkAsRead(int id)
+        public async Task<ActionResult<NotificationDto>> MarkAsRead(int id, [FromBody] UpdateNotificationStatusDto dto)
         {
-            var result = await _notificationService.MarkAsReadAsync(id);
-            if (!result)
+            if (dto == null)
+                return BadRequest("Invalid request.");
+
+            var updated = await _notificationService.MarkAsReadAsync(id, dto);
+            if (updated == null)
                 return NotFound();
 
-            return NoContent();
+            return Ok(updated);
         }
     }
 }

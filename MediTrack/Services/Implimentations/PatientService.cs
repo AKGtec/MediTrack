@@ -1,4 +1,6 @@
-﻿using MediTrack.Models;
+﻿using AutoMapper;
+using MediTrack.DTOs;
+using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Interfaces;
 
@@ -7,32 +9,47 @@ namespace MediTrack.Services.Implimentations
     public class PatientService : IPatientService
     {
         private readonly IPatientRepository _patientRepository;
+        private readonly IMapper _mapper;
 
-        public PatientService(IPatientRepository patientRepository)
+        public PatientService(IPatientRepository patientRepository, IMapper mapper)
         {
             _patientRepository = patientRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Patient?> GetPatientByIdAsync(int patientId)
+        public async Task<IEnumerable<PatientDto>> GetAllPatientsAsync()
         {
-            return await _patientRepository.GetByIdAsync(patientId);
+            var patients = await _patientRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<PatientDto>>(patients);
         }
 
-        public async Task<IEnumerable<Patient>> GetAllPatientsAsync()
+        public async Task<PatientDto?> GetPatientByIdAsync(int patientId)
         {
-            return await _patientRepository.GetAllAsync();
+            var patient = await _patientRepository.GetByIdAsync(patientId);
+            return patient == null ? null : _mapper.Map<PatientDto>(patient);
         }
 
-        public async Task<Patient> CreatePatientAsync(Patient patient)
+        public async Task<PatientDto> CreatePatientAsync(CreatePatientDto dto)
         {
+            var patient = _mapper.Map<Patient>(dto);
+
+            // ⚡ Example: hash password before saving
+            // patient.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
+
             await _patientRepository.AddAsync(patient);
-            return patient;
+            return _mapper.Map<PatientDto>(patient);
         }
 
-        public async Task<Patient> UpdatePatientAsync(Patient patient)
+        public async Task<PatientDto?> UpdatePatientAsync(int id, UpdatePatientDto dto)
         {
-            await _patientRepository.UpdateAsync(patient);
-            return patient;
+            var existing = await _patientRepository.GetByIdAsync(id);
+            if (existing == null)
+                return null;
+
+            _mapper.Map(dto, existing);
+            await _patientRepository.UpdateAsync(existing);
+
+            return _mapper.Map<PatientDto>(existing);
         }
 
         public async Task<bool> DeletePatientAsync(int patientId)

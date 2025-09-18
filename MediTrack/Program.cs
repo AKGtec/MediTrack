@@ -1,15 +1,42 @@
 using MediTrack.Data;
+using MediTrack.Mappings;
 using MediTrack.Repositories.Implementaions;
+using MediTrack.Repositories.Implementations;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Implementations;
 using MediTrack.Services.Implimentations;
 using MediTrack.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<AppointmentMappingProfile>();
+    cfg.AddProfile<AuditLogMappingProfile>();
+    cfg.AddProfile<DoctorAvailabilityProfile>();
+    cfg.AddProfile<DoctorProfile>();
+    cfg.AddProfile<InvoiceProfile>();
+    cfg.AddProfile<LabTestProfile>();
+    cfg.AddProfile<MedicalRecordProfile> ();
+    cfg.AddProfile<MessageProfile>();
+    cfg.AddProfile<NotificationProfile>();
+    cfg.AddProfile<PatientProfile>();
+    cfg.AddProfile<PaymentProfile>();
+    cfg.AddProfile<PrescriptionDetailProfile>();
+    cfg.AddProfile<PrescriptionProfile>();
+    cfg.AddProfile<SettingsProfile>();
+    cfg.AddProfile<UserProfile>();
+});
+
+
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -1,13 +1,13 @@
-﻿using MediTrack.Models;
+﻿using MediTrack.DTOs;
 
 namespace MediTrack.Services.Interfaces
 {
     public interface ISettingsService
     {
-        Task<Setting?> GetSettingByKeyAsync(string key);
-        Task<IEnumerable<Setting>> GetAllSettingsAsync();
-        Task<Setting> AddSettingAsync(Setting setting);
-        Task<Setting> UpdateSettingAsync(Setting setting);
+        Task<IEnumerable<SettingDto>> GetAllSettingsAsync();
+        Task<SettingDto?> GetSettingByKeyAsync(string key);
+        Task<SettingDto> AddSettingAsync(CreateSettingDto dto);
+        Task<SettingDto> UpdateSettingAsync(UpdateSettingDto dto);
         Task<bool> DeleteSettingAsync(int settingId);
     }
 }

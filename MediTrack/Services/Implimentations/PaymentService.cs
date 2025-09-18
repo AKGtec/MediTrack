@@ -1,4 +1,6 @@
-﻿using MediTrack.Models;
+﻿using AutoMapper;
+using MediTrack.DTOs;
+using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Interfaces;
 
@@ -7,32 +9,43 @@ namespace MediTrack.Services.Implementations
     public class PaymentService : IPaymentService
     {
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IMapper _mapper;
 
-        public PaymentService(IPaymentRepository paymentRepository)
+        public PaymentService(IPaymentRepository paymentRepository, IMapper mapper)
         {
             _paymentRepository = paymentRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Payment?> GetPaymentByIdAsync(int paymentId)
+        public async Task<PaymentDto?> GetPaymentByIdAsync(int paymentId)
         {
-            return await _paymentRepository.GetByIdAsync(paymentId);
+            var payment = await _paymentRepository.GetByIdAsync(paymentId);
+            return payment == null ? null : _mapper.Map<PaymentDto>(payment);
         }
 
-        public async Task<IEnumerable<Payment>> GetPaymentsByInvoiceAsync(int invoiceId)
+        public async Task<IEnumerable<PaymentDto>> GetPaymentsByInvoiceAsync(int invoiceId)
         {
-            return await _paymentRepository.GetByInvoiceIdAsync(invoiceId);
+            var payments = await _paymentRepository.GetByInvoiceIdAsync(invoiceId);
+            return _mapper.Map<IEnumerable<PaymentDto>>(payments);
         }
 
-        public async Task<Payment> CreatePaymentAsync(Payment payment)
+        public async Task<PaymentDto> CreatePaymentAsync(CreatePaymentDto dto)
         {
+            var payment = _mapper.Map<Payment>(dto);
             await _paymentRepository.AddAsync(payment);
-            return payment;
+            return _mapper.Map<PaymentDto>(payment);
         }
 
-        public async Task<Payment> UpdatePaymentAsync(Payment payment)
+        public async Task<PaymentDto?> UpdatePaymentAsync(int id, UpdatePaymentDto dto)
         {
-            await _paymentRepository.UpdateAsync(payment);
-            return payment;
+            var existing = await _paymentRepository.GetByIdAsync(id);
+            if (existing == null)
+                return null;
+
+            _mapper.Map(dto, existing);
+            await _paymentRepository.UpdateAsync(existing);
+
+            return _mapper.Map<PaymentDto>(existing);
         }
 
         public async Task<bool> DeletePaymentAsync(int paymentId)
