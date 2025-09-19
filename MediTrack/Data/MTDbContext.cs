@@ -1,6 +1,6 @@
 ﻿using MediTrack.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders; // pour EntityTypeBuilder et IndexBuilder
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MediTrack.Data
 {
@@ -40,18 +40,27 @@ namespace MediTrack.Data
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+            // Configure Address and PhoneNumber as nullable
+            modelBuilder.Entity<User>()
+                .Property(u => u.Address)
+                .IsRequired(false);
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.PhoneNumber)
+                .IsRequired(false);
+
             // Unique transaction id when not null
             modelBuilder.Entity<Payment>()
                 .HasIndex(p => p.TransactionId)
                 .IsUnique()
-                .HasFilter("[TransactionId] IS NOT NULL"); // SQL Server filter; adjust for other providers
+                .HasFilter("[TransactionId] IS NOT NULL");
 
             // TPT mapping: Users -> Doctors, Patients
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Doctor>().ToTable("Doctors");
             modelBuilder.Entity<Patient>().ToTable("Patients");
 
-            // Configure one-to-many relationships where automatic mapping might not be enough
+            // User relationships
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Notifications)
                 .WithOne(n => n.User)
@@ -103,6 +112,44 @@ namespace MediTrack.Data
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            // Prescription relationships - FIXED: Only cascade from MedicalRecord
+            modelBuilder.Entity<Prescription>()
+                .HasOne(p => p.MedicalRecord)
+                .WithMany(m => m.Prescriptions)
+                .HasForeignKey(p => p.RecordId)
+                .OnDelete(DeleteBehavior.Cascade); // Only cascade from MedicalRecord
+
+            modelBuilder.Entity<Prescription>()
+                .HasOne(p => p.Doctor)
+                .WithMany(d => d.Prescriptions)
+                .HasForeignKey(p => p.DoctorId)
+                .OnDelete(DeleteBehavior.Restrict); // Restrict to avoid cascade cycles
+
+            modelBuilder.Entity<Prescription>()
+                .HasOne(p => p.Patient)
+                .WithMany(pat => pat.Prescriptions)
+                .HasForeignKey(p => p.PatientId)
+                .OnDelete(DeleteBehavior.Restrict); // Restrict to avoid cascade cycles
+
+            // Invoice relationships (cascade path fixed)
+            modelBuilder.Entity<Invoice>()
+                .HasOne(i => i.Appointment)
+                .WithOne(a => a.Invoice)
+                .HasForeignKey<Invoice>(i => i.AppointmentId)
+                .OnDelete(DeleteBehavior.Cascade); // cascade only through Appointment
+
+            modelBuilder.Entity<Invoice>()
+                .HasOne(i => i.Patient)
+                .WithMany(p => p.Invoices)
+                .HasForeignKey(i => i.PatientId)
+                .OnDelete(DeleteBehavior.Restrict); // prevent multiple cascade paths
+
+            modelBuilder.Entity<Invoice>()
+                .HasOne(i => i.Doctor)
+                .WithMany(d => d.Invoices)
+                .HasForeignKey(i => i.DoctorId)
+                .OnDelete(DeleteBehavior.Restrict); // prevent multiple cascade paths
+
             // Invoice - Payment
             modelBuilder.Entity<Invoice>()
                 .HasMany(i => i.Payments)
@@ -117,17 +164,19 @@ namespace MediTrack.Data
                 .HasForeignKey(d => d.PrescriptionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // LabTest -> MedicalRecord
+            modelBuilder.Entity<LabTest>()
+                .HasOne(l => l.MedicalRecord)
+                .WithMany(m => m.LabTests)
+                .HasForeignKey(l => l.RecordId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             // DoctorAvailability -> Doctor
             modelBuilder.Entity<DoctorAvailability>()
                 .HasOne(d => d.Doctor)
                 .WithMany(doc => doc.Availabilities)
                 .HasForeignKey(d => d.DoctorId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            // Additional configuration hints (optional)
-            // - You may want to configure precision for decimal columns depending on currency.
-            // - For DayOfWeek, consider storing int enum instead of string for queries.
-            // - Configure cascade behaviours according to your business rules.
         }
     }
 }

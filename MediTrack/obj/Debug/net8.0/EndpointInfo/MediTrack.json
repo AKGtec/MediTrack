@@ -27,17 +27,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               }
             }
@@ -90,7 +90,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               },
@@ -98,7 +98,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               },
@@ -106,7 +106,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               }
@@ -139,7 +139,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               },
@@ -147,7 +147,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               },
@@ -155,7 +155,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Appointment"
+                    "$ref": "#/components/schemas/AppointmentDto"
                   }
                 }
               }
@@ -173,17 +173,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Appointment"
+                "$ref": "#/components/schemas/CreateAppointmentDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Appointment"
+                "$ref": "#/components/schemas/CreateAppointmentDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Appointment"
+                "$ref": "#/components/schemas/CreateAppointmentDto"
               }
             }
           }
@@ -194,17 +194,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               }
             }
@@ -232,17 +232,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateAppointmentStatusDto"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateAppointmentStatusDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateAppointmentStatusDto"
               }
             }
           }
@@ -253,17 +253,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Appointment"
+                  "$ref": "#/components/schemas/AppointmentDto"
                 }
               }
             }
@@ -316,17 +316,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuditLog"
+                  "$ref": "#/components/schemas/AuditLogDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuditLog"
+                  "$ref": "#/components/schemas/AuditLogDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuditLog"
+                  "$ref": "#/components/schemas/AuditLogDto"
                 }
               }
             }
@@ -358,7 +358,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuditLog"
+                    "$ref": "#/components/schemas/AuditLogDto"
                   }
                 }
               },
@@ -366,7 +366,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuditLog"
+                    "$ref": "#/components/schemas/AuditLogDto"
                   }
                 }
               },
@@ -374,7 +374,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuditLog"
+                    "$ref": "#/components/schemas/AuditLogDto"
                   }
                 }
               }
@@ -384,6 +384,42 @@
       }
     },
     "/api/AuditLogs": {
+      "get": {
+        "tags": [
+          "AuditLogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "AuditLogs"
@@ -392,24 +428,145 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuditLog"
+                "$ref": "#/components/schemas/CreateAuditLogDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuditLog"
+                "$ref": "#/components/schemas/CreateAuditLogDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuditLog"
+                "$ref": "#/components/schemas/CreateAuditLogDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AuditLogs/Action/{action}": {
+      "get": {
+        "tags": [
+          "AuditLogs"
+        ],
+        "parameters": [
+          {
+            "name": "action",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AuditLogs/DateRange": {
+      "get": {
+        "tags": [
+          "AuditLogs"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditLogDto"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -438,7 +595,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DoctorAvailability"
+                    "$ref": "#/components/schemas/DoctorAvailabilityDto"
                   }
                 }
               },
@@ -446,7 +603,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DoctorAvailability"
+                    "$ref": "#/components/schemas/DoctorAvailabilityDto"
                   }
                 }
               },
@@ -454,7 +611,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DoctorAvailability"
+                    "$ref": "#/components/schemas/DoctorAvailabilityDto"
                   }
                 }
               }
@@ -472,17 +629,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/CreateDoctorAvailabilityDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/CreateDoctorAvailabilityDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/CreateDoctorAvailabilityDto"
               }
             }
           }
@@ -493,17 +650,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               }
             }
@@ -531,17 +688,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/UpdateDoctorAvailabilityDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/UpdateDoctorAvailabilityDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DoctorAvailability"
+                "$ref": "#/components/schemas/UpdateDoctorAvailabilityDto"
               }
             }
           }
@@ -552,17 +709,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DoctorAvailability"
+                  "$ref": "#/components/schemas/DoctorAvailabilityDto"
                 }
               }
             }
@@ -604,7 +761,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Doctor"
+                    "$ref": "#/components/schemas/DoctorDto"
                   }
                 }
               },
@@ -612,7 +769,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Doctor"
+                    "$ref": "#/components/schemas/DoctorDto"
                   }
                 }
               },
@@ -620,7 +777,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Doctor"
+                    "$ref": "#/components/schemas/DoctorDto"
                   }
                 }
               }
@@ -636,17 +793,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/CreateDoctorDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/CreateDoctorDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/CreateDoctorDto"
               }
             }
           }
@@ -657,17 +814,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               }
             }
@@ -697,17 +854,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               }
             }
@@ -733,17 +890,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/UpdateDoctorDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/UpdateDoctorDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Doctor"
+                "$ref": "#/components/schemas/UpdateDoctorDto"
               }
             }
           }
@@ -754,17 +911,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Doctor"
+                  "$ref": "#/components/schemas/DoctorDto"
                 }
               }
             }
@@ -815,17 +972,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               }
             }
@@ -857,7 +1014,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Invoice"
+                    "$ref": "#/components/schemas/InvoiceDto"
                   }
                 }
               },
@@ -865,7 +1022,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Invoice"
+                    "$ref": "#/components/schemas/InvoiceDto"
                   }
                 }
               },
@@ -873,7 +1030,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Invoice"
+                    "$ref": "#/components/schemas/InvoiceDto"
                   }
                 }
               }
@@ -891,17 +1048,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Invoice"
+                "$ref": "#/components/schemas/CreateInvoiceDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Invoice"
+                "$ref": "#/components/schemas/CreateInvoiceDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Invoice"
+                "$ref": "#/components/schemas/CreateInvoiceDto"
               }
             }
           }
@@ -912,17 +1069,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               }
             }
@@ -950,17 +1107,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateInvoiceStatusDto"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateInvoiceStatusDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/UpdateInvoiceStatusDto"
               }
             }
           }
@@ -971,17 +1128,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/InvoiceDto"
                 }
               }
             }
@@ -1011,17 +1168,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               }
             }
@@ -1047,17 +1204,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/UpdateLabTestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/UpdateLabTestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/UpdateLabTestDto"
               }
             }
           }
@@ -1068,17 +1225,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               }
             }
@@ -1110,7 +1267,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/LabTest"
+                    "$ref": "#/components/schemas/LabTestDto"
                   }
                 }
               },
@@ -1118,7 +1275,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/LabTest"
+                    "$ref": "#/components/schemas/LabTestDto"
                   }
                 }
               },
@@ -1126,7 +1283,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/LabTest"
+                    "$ref": "#/components/schemas/LabTestDto"
                   }
                 }
               }
@@ -1144,17 +1301,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/CreateLabTestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/CreateLabTestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LabTest"
+                "$ref": "#/components/schemas/CreateLabTestDto"
               }
             }
           }
@@ -1165,17 +1322,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LabTest"
+                  "$ref": "#/components/schemas/LabTestDto"
                 }
               }
             }
@@ -1205,17 +1362,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               }
             }
@@ -1241,17 +1398,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/UpdateMedicalRecordDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/UpdateMedicalRecordDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/UpdateMedicalRecordDto"
               }
             }
           }
@@ -1262,17 +1419,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               }
             }
@@ -1304,7 +1461,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MedicalRecord"
+                    "$ref": "#/components/schemas/MedicalRecordDto"
                   }
                 }
               },
@@ -1312,7 +1469,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MedicalRecord"
+                    "$ref": "#/components/schemas/MedicalRecordDto"
                   }
                 }
               },
@@ -1320,7 +1477,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MedicalRecord"
+                    "$ref": "#/components/schemas/MedicalRecordDto"
                   }
                 }
               }
@@ -1338,17 +1495,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/CreateMedicalRecordDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/CreateMedicalRecordDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MedicalRecord"
+                "$ref": "#/components/schemas/CreateMedicalRecordDto"
               }
             }
           }
@@ -1359,17 +1516,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MedicalRecord"
+                  "$ref": "#/components/schemas/MedicalRecordDto"
                 }
               }
             }
@@ -1399,17 +1556,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               }
             }
@@ -1469,7 +1626,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDto"
                   }
                 }
               },
@@ -1477,7 +1634,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDto"
                   }
                 }
               },
@@ -1485,7 +1642,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDto"
                   }
                 }
               }
@@ -1503,17 +1660,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Message"
+                "$ref": "#/components/schemas/CreateMessageDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Message"
+                "$ref": "#/components/schemas/CreateMessageDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Message"
+                "$ref": "#/components/schemas/CreateMessageDto"
               }
             }
           }
@@ -1524,17 +1681,76 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Message"
+                  "$ref": "#/components/schemas/MessageDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Messages/{id}/Read": {
+      "put": {
+        "tags": [
+          "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMessageStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMessageStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMessageStatusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageDto"
                 }
               }
             }
@@ -1564,17 +1780,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               }
             }
@@ -1606,7 +1822,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Notification"
+                    "$ref": "#/components/schemas/NotificationDto"
                   }
                 }
               },
@@ -1614,7 +1830,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Notification"
+                    "$ref": "#/components/schemas/NotificationDto"
                   }
                 }
               },
@@ -1622,7 +1838,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Notification"
+                    "$ref": "#/components/schemas/NotificationDto"
                   }
                 }
               }
@@ -1640,17 +1856,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Notification"
+                "$ref": "#/components/schemas/CreateNotificationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Notification"
+                "$ref": "#/components/schemas/CreateNotificationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Notification"
+                "$ref": "#/components/schemas/CreateNotificationDto"
               }
             }
           }
@@ -1661,17 +1877,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Notification"
+                  "$ref": "#/components/schemas/NotificationDto"
                 }
               }
             }
@@ -1695,9 +1911,45 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateNotificationStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateNotificationStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateNotificationStatusDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationDto"
+                }
+              }
+            }
           }
         }
       }
@@ -1715,7 +1967,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Patient"
+                    "$ref": "#/components/schemas/PatientDto"
                   }
                 }
               },
@@ -1723,7 +1975,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Patient"
+                    "$ref": "#/components/schemas/PatientDto"
                   }
                 }
               },
@@ -1731,7 +1983,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Patient"
+                    "$ref": "#/components/schemas/PatientDto"
                   }
                 }
               }
@@ -1747,17 +1999,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/CreatePatientDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/CreatePatientDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/CreatePatientDto"
               }
             }
           }
@@ -1768,17 +2020,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               }
             }
@@ -1808,17 +2060,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               }
             }
@@ -1844,17 +2096,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/UpdatePatientDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/UpdatePatientDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Patient"
+                "$ref": "#/components/schemas/UpdatePatientDto"
               }
             }
           }
@@ -1865,17 +2117,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Patient"
+                  "$ref": "#/components/schemas/PatientDto"
                 }
               }
             }
@@ -1926,17 +2178,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               }
             }
@@ -1962,17 +2214,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/UpdatePaymentDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/UpdatePaymentDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/UpdatePaymentDto"
               }
             }
           }
@@ -1983,17 +2235,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               }
             }
@@ -2046,7 +2298,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Payment"
+                    "$ref": "#/components/schemas/PaymentDto"
                   }
                 }
               },
@@ -2054,7 +2306,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Payment"
+                    "$ref": "#/components/schemas/PaymentDto"
                   }
                 }
               },
@@ -2062,7 +2314,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Payment"
+                    "$ref": "#/components/schemas/PaymentDto"
                   }
                 }
               }
@@ -2080,17 +2332,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/CreatePaymentDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/CreatePaymentDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Payment"
+                "$ref": "#/components/schemas/CreatePaymentDto"
               }
             }
           }
@@ -2101,17 +2353,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payment"
+                  "$ref": "#/components/schemas/PaymentDto"
                 }
               }
             }
@@ -2143,7 +2395,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PrescriptionDetail"
+                    "$ref": "#/components/schemas/PrescriptionDetailDto"
                   }
                 }
               },
@@ -2151,7 +2403,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PrescriptionDetail"
+                    "$ref": "#/components/schemas/PrescriptionDetailDto"
                   }
                 }
               },
@@ -2159,7 +2411,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PrescriptionDetail"
+                    "$ref": "#/components/schemas/PrescriptionDetailDto"
                   }
                 }
               }
@@ -2177,17 +2429,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/CreatePrescriptionDetailDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/CreatePrescriptionDetailDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/CreatePrescriptionDetailDto"
               }
             }
           }
@@ -2198,17 +2450,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               }
             }
@@ -2236,17 +2488,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/UpdatePrescriptionDetailDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/UpdatePrescriptionDetailDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PrescriptionDetail"
+                "$ref": "#/components/schemas/UpdatePrescriptionDetailDto"
               }
             }
           }
@@ -2257,17 +2509,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrescriptionDetail"
+                  "$ref": "#/components/schemas/PrescriptionDetailDto"
                 }
               }
             }
@@ -2318,17 +2570,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               }
             }
@@ -2360,7 +2612,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Prescription"
+                    "$ref": "#/components/schemas/PrescriptionDto"
                   }
                 }
               },
@@ -2368,7 +2620,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Prescription"
+                    "$ref": "#/components/schemas/PrescriptionDto"
                   }
                 }
               },
@@ -2376,7 +2628,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Prescription"
+                    "$ref": "#/components/schemas/PrescriptionDto"
                   }
                 }
               }
@@ -2394,17 +2646,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Prescription"
+                "$ref": "#/components/schemas/CreatePrescriptionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Prescription"
+                "$ref": "#/components/schemas/CreatePrescriptionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Prescription"
+                "$ref": "#/components/schemas/CreatePrescriptionDto"
               }
             }
           }
@@ -2415,17 +2667,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Prescription"
+                  "$ref": "#/components/schemas/PrescriptionDto"
                 }
               }
             }
@@ -2446,7 +2698,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Setting"
+                    "$ref": "#/components/schemas/SettingDto"
                   }
                 }
               },
@@ -2454,7 +2706,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Setting"
+                    "$ref": "#/components/schemas/SettingDto"
                   }
                 }
               },
@@ -2462,7 +2714,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Setting"
+                    "$ref": "#/components/schemas/SettingDto"
                   }
                 }
               }
@@ -2478,17 +2730,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/CreateSettingDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/CreateSettingDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/CreateSettingDto"
               }
             }
           }
@@ -2499,17 +2751,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               }
             }
@@ -2538,17 +2790,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               }
             }
@@ -2576,17 +2828,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/UpdateSettingDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/UpdateSettingDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Setting"
+                "$ref": "#/components/schemas/UpdateSettingDto"
               }
             }
           }
@@ -2597,17 +2849,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Setting"
+                  "$ref": "#/components/schemas/SettingDto"
                 }
               }
             }
@@ -2649,7 +2901,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/schemas/UserDto"
                   }
                 }
               },
@@ -2657,7 +2909,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/schemas/UserDto"
                   }
                 }
               },
@@ -2665,7 +2917,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/schemas/UserDto"
                   }
                 }
               }
@@ -2681,17 +2933,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegisterDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegisterDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegisterDto"
               }
             }
           }
@@ -2702,17 +2954,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               }
             }
@@ -2742,17 +2994,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               }
             }
@@ -2778,17 +3030,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             }
           }
@@ -2799,17 +3051,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               }
             }
@@ -2859,17 +3111,65 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponseDto"
                 }
               }
             }
@@ -2880,13 +3180,7 @@
   },
   "components": {
     "schemas": {
-      "Appointment": {
-        "required": [
-          "appointmentDate",
-          "doctorId",
-          "patientId",
-          "status"
-        ],
+      "AppointmentDto": {
         "type": "object",
         "properties": {
           "appointmentId": {
@@ -2897,15 +3191,17 @@
             "type": "integer",
             "format": "int32"
           },
-          "patient": {
-            "$ref": "#/components/schemas/Patient"
+          "patientName": {
+            "type": "string",
+            "nullable": true
           },
           "doctorId": {
             "type": "integer",
             "format": "int32"
           },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
+          "doctorName": {
+            "type": "string",
+            "nullable": true
           },
           "appointmentDate": {
             "type": "string",
@@ -2922,12 +3218,6 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
-          },
-          "medicalRecord": {
-            "$ref": "#/components/schemas/MedicalRecord"
-          },
-          "invoice": {
-            "$ref": "#/components/schemas/Invoice"
           }
         },
         "additionalProperties": false
@@ -2942,7 +3232,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "AuditLog": {
+      "AuditLogDto": {
         "type": "object",
         "properties": {
           "logId": {
@@ -2954,11 +3244,11 @@
             "format": "int32",
             "nullable": true
           },
-          "user": {
-            "$ref": "#/components/schemas/User"
+          "userName": {
+            "type": "string",
+            "nullable": true
           },
           "action": {
-            "maxLength": 200,
             "type": "string",
             "nullable": true
           },
@@ -2967,7 +3257,19 @@
             "format": "date-time"
           },
           "ipAddress": {
-            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthResponseDto": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserDto"
+          },
+          "token": {
             "type": "string",
             "nullable": true
           }
@@ -2983,37 +3285,102 @@
         "type": "integer",
         "format": "int32"
       },
-      "Doctor": {
+      "CreateAppointmentDto": {
         "required": [
-          "email",
-          "firstName",
-          "lastName",
-          "passwordHash",
-          "role"
+          "appointmentDate",
+          "doctorId",
+          "patientId"
         ],
         "type": "object",
         "properties": {
-          "firstName": {
-            "maxLength": 100,
-            "minLength": 1,
+          "patientId": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAuditLogDto": {
+        "required": [
+          "action"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "action": {
+            "maxLength": 200,
+            "minLength": 0,
             "type": "string"
+          },
+          "ipAddress": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateDoctorAvailabilityDto": {
+        "type": "object",
+        "properties": {
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dayOfWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-span"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateDoctorDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
           },
           "lastName": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
-          "passwordHash": {
-            "minLength": 1,
-            "type": "string"
+          "password": {
+            "type": "string",
+            "nullable": true
           },
           "phoneNumber": {
-            "maxLength": 20,
             "type": "string",
             "nullable": true
           },
@@ -3026,60 +3393,349 @@
             "$ref": "#/components/schemas/Gender"
           },
           "address": {
-            "maxLength": 500,
             "type": "string",
             "nullable": true
-          },
-          "role": {
-            "$ref": "#/components/schemas/Role"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "notifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Notification"
-            },
-            "nullable": true
-          },
-          "sentMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
-            "nullable": true
-          },
-          "receivedMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
-            "nullable": true
-          },
-          "auditLogs": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AuditLog"
-            },
-            "nullable": true
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
           },
           "specialization": {
             "type": "string",
             "nullable": true
           },
           "licenseNumber": {
-            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "experienceYears": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "clinicName": {
+            "type": "string",
+            "nullable": true
+          },
+          "consultationFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateInvoiceDto": {
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateLabTestDto": {
+        "type": "object",
+        "properties": {
+          "recordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "testName": {
+            "type": "string",
+            "nullable": true
+          },
+          "results": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMedicalRecordDto": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "diagnosis": {
+            "type": "string",
+            "nullable": true
+          },
+          "treatmentPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMessageDto": {
+        "type": "object",
+        "properties": {
+          "senderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "receiverId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "messageText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateNotificationDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/NotificationType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePatientDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloodType": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergies": {
+            "type": "string",
+            "nullable": true
+          },
+          "chronicConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactPhone": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePaymentDto": {
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentMethod": {
+            "$ref": "#/components/schemas/PaymentMethod"
+          },
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "amountPaid": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePrescriptionDetailDto": {
+        "type": "object",
+        "properties": {
+          "prescriptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "medicineName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dosage": {
+            "type": "string",
+            "nullable": true
+          },
+          "frequency": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "string",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePrescriptionDto": {
+        "type": "object",
+        "properties": {
+          "recordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prescribedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSettingDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DoctorAvailabilityDto": {
+        "type": "object",
+        "properties": {
+          "availabilityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dayOfWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-span"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DoctorDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialization": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseNumber": {
             "type": "string",
             "nullable": true
           },
@@ -3099,77 +3755,6 @@
           },
           "availabilityStatus": {
             "$ref": "#/components/schemas/AvailabilityStatus"
-          },
-          "availabilities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DoctorAvailability"
-            },
-            "nullable": true
-          },
-          "appointments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Appointment"
-            },
-            "nullable": true
-          },
-          "medicalRecords": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MedicalRecord"
-            },
-            "nullable": true
-          },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Invoice"
-            },
-            "nullable": true
-          },
-          "prescriptions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Prescription"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DoctorAvailability": {
-        "required": [
-          "dayOfWeek",
-          "doctorId",
-          "endTime",
-          "startTime"
-        ],
-        "type": "object",
-        "properties": {
-          "availabilityId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "doctorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
-          },
-          "dayOfWeek": {
-            "maxLength": 10,
-            "minLength": 1,
-            "type": "string"
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-span"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-span"
           }
         },
         "additionalProperties": false
@@ -3183,12 +3768,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Invoice": {
-        "required": [
-          "appointmentId",
-          "doctorId",
-          "patientId"
-        ],
+      "InvoiceDto": {
         "type": "object",
         "properties": {
           "invoiceId": {
@@ -3199,22 +3779,21 @@
             "type": "integer",
             "format": "int32"
           },
-          "appointment": {
-            "$ref": "#/components/schemas/Appointment"
-          },
           "patientId": {
             "type": "integer",
             "format": "int32"
           },
-          "patient": {
-            "$ref": "#/components/schemas/Patient"
+          "patientName": {
+            "type": "string",
+            "nullable": true
           },
           "doctorId": {
             "type": "integer",
             "format": "int32"
           },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
+          "doctorName": {
+            "type": "string",
+            "nullable": true
           },
           "amount": {
             "type": "number",
@@ -3235,7 +3814,7 @@
           "payments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Payment"
+              "$ref": "#/components/schemas/PaymentDto"
             },
             "nullable": true
           }
@@ -3251,11 +3830,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "LabTest": {
-        "required": [
-          "recordId",
-          "testName"
-        ],
+      "LabTestDto": {
         "type": "object",
         "properties": {
           "labTestId": {
@@ -3266,20 +3841,15 @@
             "type": "integer",
             "format": "int32"
           },
-          "medicalRecord": {
-            "$ref": "#/components/schemas/MedicalRecord"
-          },
           "testName": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "results": {
             "type": "string",
             "nullable": true
           },
           "fileUrl": {
-            "maxLength": 1000,
             "type": "string",
             "nullable": true
           },
@@ -3290,11 +3860,7 @@
         },
         "additionalProperties": false
       },
-      "MedicalRecord": {
-        "required": [
-          "doctorId",
-          "patientId"
-        ],
+      "MedicalRecordDto": {
         "type": "object",
         "properties": {
           "recordId": {
@@ -3305,23 +3871,22 @@
             "type": "integer",
             "format": "int32"
           },
-          "patient": {
-            "$ref": "#/components/schemas/Patient"
+          "patientName": {
+            "type": "string",
+            "nullable": true
           },
           "doctorId": {
             "type": "integer",
             "format": "int32"
           },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
+          "doctorName": {
+            "type": "string",
+            "nullable": true
           },
           "appointmentId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
-          },
-          "appointment": {
-            "$ref": "#/components/schemas/Appointment"
           },
           "diagnosis": {
             "type": "string",
@@ -3342,25 +3907,21 @@
           "prescriptions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Prescription"
+              "$ref": "#/components/schemas/PrescriptionDto"
             },
             "nullable": true
           },
           "labTests": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/LabTest"
+              "$ref": "#/components/schemas/LabTestDto"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Message": {
-        "required": [
-          "receiverId",
-          "senderId"
-        ],
+      "MessageDto": {
         "type": "object",
         "properties": {
           "messageId": {
@@ -3371,15 +3932,17 @@
             "type": "integer",
             "format": "int32"
           },
-          "sender": {
-            "$ref": "#/components/schemas/User"
+          "senderName": {
+            "type": "string",
+            "nullable": true
           },
           "receiverId": {
             "type": "integer",
             "format": "int32"
           },
-          "receiver": {
-            "$ref": "#/components/schemas/User"
+          "receiverName": {
+            "type": "string",
+            "nullable": true
           },
           "messageText": {
             "type": "string",
@@ -3395,10 +3958,7 @@
         },
         "additionalProperties": false
       },
-      "Notification": {
-        "required": [
-          "userId"
-        ],
+      "NotificationDto": {
         "type": "object",
         "properties": {
           "notificationId": {
@@ -3409,11 +3969,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "user": {
-            "$ref": "#/components/schemas/User"
+          "userName": {
+            "type": "string",
+            "nullable": true
           },
           "title": {
-            "maxLength": 200,
             "type": "string",
             "nullable": true
           },
@@ -3443,37 +4003,22 @@
         "type": "integer",
         "format": "int32"
       },
-      "Patient": {
-        "required": [
-          "email",
-          "firstName",
-          "lastName",
-          "passwordHash",
-          "role"
-        ],
+      "PatientDto": {
         "type": "object",
         "properties": {
-          "firstName": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+          "userId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "lastName": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+          "fullName": {
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
-          },
-          "passwordHash": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "phoneNumber": {
-            "maxLength": 20,
             "type": "string",
             "nullable": true
           },
@@ -3483,59 +4028,14 @@
             "nullable": true
           },
           "gender": {
-            "$ref": "#/components/schemas/Gender"
+            "type": "string",
+            "nullable": true
           },
           "address": {
-            "maxLength": 500,
             "type": "string",
             "nullable": true
-          },
-          "role": {
-            "$ref": "#/components/schemas/Role"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "notifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Notification"
-            },
-            "nullable": true
-          },
-          "sentMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
-            "nullable": true
-          },
-          "receivedMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
-            "nullable": true
-          },
-          "auditLogs": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AuditLog"
-            },
-            "nullable": true
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
           },
           "bloodType": {
-            "maxLength": 5,
             "type": "string",
             "nullable": true
           },
@@ -3548,50 +4048,21 @@
             "nullable": true
           },
           "emergencyContactName": {
-            "maxLength": 200,
             "type": "string",
             "nullable": true
           },
           "emergencyContactPhone": {
-            "maxLength": 20,
             "type": "string",
             "nullable": true
           },
-          "appointments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Appointment"
-            },
-            "nullable": true
-          },
-          "medicalRecords": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MedicalRecord"
-            },
-            "nullable": true
-          },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Invoice"
-            },
-            "nullable": true
-          },
-          "prescriptions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Prescription"
-            },
-            "nullable": true
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
       },
-      "Payment": {
-        "required": [
-          "invoiceId"
-        ],
+      "PaymentDto": {
         "type": "object",
         "properties": {
           "paymentId": {
@@ -3602,14 +4073,10 @@
             "type": "integer",
             "format": "int32"
           },
-          "invoice": {
-            "$ref": "#/components/schemas/Invoice"
-          },
           "paymentMethod": {
             "$ref": "#/components/schemas/PaymentMethod"
           },
           "transactionId": {
-            "maxLength": 200,
             "type": "string",
             "nullable": true
           },
@@ -3634,58 +4101,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Prescription": {
-        "required": [
-          "doctorId",
-          "patientId",
-          "recordId"
-        ],
-        "type": "object",
-        "properties": {
-          "prescriptionId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "recordId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "medicalRecord": {
-            "$ref": "#/components/schemas/MedicalRecord"
-          },
-          "doctorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
-          },
-          "patientId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "patient": {
-            "$ref": "#/components/schemas/Patient"
-          },
-          "prescribedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "details": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PrescriptionDetail"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PrescriptionDetail": {
-        "required": [
-          "medicineName",
-          "prescriptionId"
-        ],
+      "PrescriptionDetailDto": {
         "type": "object",
         "properties": {
           "prescriptionDetailId": {
@@ -3696,31 +4112,58 @@
             "type": "integer",
             "format": "int32"
           },
-          "prescription": {
-            "$ref": "#/components/schemas/Prescription"
-          },
           "medicineName": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "dosage": {
-            "maxLength": 100,
             "type": "string",
             "nullable": true
           },
           "frequency": {
-            "maxLength": 100,
             "type": "string",
             "nullable": true
           },
           "duration": {
-            "maxLength": 100,
             "type": "string",
             "nullable": true
           },
           "instructions": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PrescriptionDto": {
+        "type": "object",
+        "properties": {
+          "prescriptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prescribedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "prescriptionDetailIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
             "nullable": true
           }
         },
@@ -3735,10 +4178,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Setting": {
-        "required": [
-          "key"
-        ],
+      "SettingDto": {
         "type": "object",
         "properties": {
           "settingId": {
@@ -3746,9 +4186,8 @@
             "format": "int32"
           },
           "key": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "value": {
             "type": "string",
@@ -3757,14 +4196,241 @@
         },
         "additionalProperties": false
       },
-      "User": {
+      "UpdateAppointmentStatusDto": {
         "required": [
-          "email",
-          "firstName",
-          "lastName",
-          "passwordHash",
-          "role"
+          "status"
         ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/AppointmentStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDoctorAvailabilityDto": {
+        "type": "object",
+        "properties": {
+          "dayOfWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-span"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDoctorDto": {
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialization": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "experienceYears": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "clinicName": {
+            "type": "string",
+            "nullable": true
+          },
+          "consultationFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "availabilityStatus": {
+            "$ref": "#/components/schemas/AvailabilityStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateInvoiceStatusDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/InvoiceStatus"
+          },
+          "paidDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateLabTestDto": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "testDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMedicalRecordDto": {
+        "type": "object",
+        "properties": {
+          "diagnosis": {
+            "type": "string",
+            "nullable": true
+          },
+          "treatmentPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMessageStatusDto": {
+        "type": "object",
+        "properties": {
+          "isRead": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateNotificationStatusDto": {
+        "type": "object",
+        "properties": {
+          "isRead": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePatientDto": {
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloodType": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergies": {
+            "type": "string",
+            "nullable": true
+          },
+          "chronicConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactPhone": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePaymentDto": {
+        "type": "object",
+        "properties": {
+          "paymentMethod": {
+            "$ref": "#/components/schemas/PaymentMethod"
+          },
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "amountPaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePrescriptionDetailDto": {
+        "type": "object",
+        "properties": {
+          "medicineName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dosage": {
+            "type": "string",
+            "nullable": true
+          },
+          "frequency": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "string",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSettingDto": {
+        "type": "object",
+        "properties": {
+          "settingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDto": {
         "type": "object",
         "properties": {
           "userId": {
@@ -3772,26 +4438,18 @@
             "format": "int32"
           },
           "firstName": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "lastName": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string"
-          },
-          "passwordHash": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "phoneNumber": {
-            "maxLength": 20,
             "type": "string",
             "nullable": true
           },
@@ -3803,49 +4461,47 @@
           "gender": {
             "$ref": "#/components/schemas/Gender"
           },
-          "address": {
-            "maxLength": 500,
-            "type": "string",
-            "nullable": true
-          },
           "role": {
             "$ref": "#/components/schemas/Role"
-          },
-          "createdAt": {
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
-          "updatedAt": {
+          "password": {
             "type": "string",
-            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRegisterDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
             "nullable": true
           },
-          "notifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Notification"
-            },
+          "lastName": {
+            "type": "string",
             "nullable": true
           },
-          "sentMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
+          "email": {
+            "type": "string",
             "nullable": true
           },
-          "receivedMessages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Message"
-            },
+          "password": {
+            "type": "string",
             "nullable": true
           },
-          "auditLogs": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AuditLog"
-            },
+          "phoneNumber": {
+            "type": "string",
             "nullable": true
           }
         },

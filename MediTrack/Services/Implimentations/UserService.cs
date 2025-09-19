@@ -3,8 +3,7 @@ using MediTrack.DTOs;
 using MediTrack.Models;
 using MediTrack.Repositories.Interfaces;
 using MediTrack.Services.Interfaces;
-using System.Security.Cryptography;
-using System.Text;
+using BCrypt.Net;
 
 namespace MediTrack.Services.Implimentations
 {
@@ -46,6 +45,14 @@ namespace MediTrack.Services.Implimentations
             return _mapper.Map<UserDto>(user);
         }
 
+        public async Task<UserDto?> LoginAsync(string email, string password)
+        {
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user == null || !VerifyPassword(password, user.PasswordHash))
+                return null;
+            return _mapper.Map<UserDto>(user);
+        }
+
         public async Task<UserDto> UpdateUserAsync(UserDto dto)
         {
             var user = _mapper.Map<User>(dto);
@@ -60,12 +67,8 @@ namespace MediTrack.Services.Implimentations
             return true;
         }
 
-        private string HashPassword(string password)
-        {
-            using var sha256 = SHA256.Create();
-            var bytes = Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
+        private string HashPassword(string password) => BCrypt.Net.BCrypt.HashPassword(password);
+
+        private bool VerifyPassword(string password, string hash) => BCrypt.Net.BCrypt.Verify(password, hash);
     }
 }

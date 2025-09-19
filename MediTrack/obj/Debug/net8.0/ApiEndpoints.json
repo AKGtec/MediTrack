@@ -8,14 +8,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "appointment",
-        "Type": "MediTrack.Models.Appointment",
+        "Name": "createAppointmentDto",
+        "Type": "MediTrack.DTOs.CreateAppointmentDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Appointment",
+        "Type": "MediTrack.DTOs.AppointmentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -41,7 +41,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Appointment",
+        "Type": "MediTrack.DTOs.AppointmentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -97,14 +97,14 @@
         "IsRequired": true
       },
       {
-        "Name": "status",
-        "Type": "System.String",
+        "Name": "updateStatusDto",
+        "Type": "MediTrack.DTOs.UpdateAppointmentStatusDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Appointment",
+        "Type": "MediTrack.DTOs.AppointmentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -130,7 +130,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Appointment, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AppointmentDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -156,7 +156,27 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Appointment, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AppointmentDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediTrack.Presentation.Controllers.AuditLogsController",
+    "Method": "GetAllLogs",
+    "RelativePath": "api/AuditLogs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AuditLogDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -175,12 +195,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "log",
-        "Type": "MediTrack.Models.AuditLog",
+        "Name": "createAuditLogDto",
+        "Type": "MediTrack.DTOs.CreateAuditLogDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "MediTrack.DTOs.AuditLogDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MediTrack.Presentation.Controllers.AuditLogsController",
@@ -198,7 +228,64 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.AuditLog",
+        "Type": "MediTrack.DTOs.AuditLogDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediTrack.Presentation.Controllers.AuditLogsController",
+    "Method": "GetLogsByAction",
+    "RelativePath": "api/AuditLogs/Action/{action}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "action",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AuditLogDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediTrack.Presentation.Controllers.AuditLogsController",
+    "Method": "GetLogsByDateRange",
+    "RelativePath": "api/AuditLogs/DateRange",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AuditLogDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -224,7 +311,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.AuditLog, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.AuditLogDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -243,14 +330,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "availability",
-        "Type": "MediTrack.Models.DoctorAvailability",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateDoctorAvailabilityDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.DoctorAvailability",
+        "Type": "MediTrack.DTOs.DoctorAvailabilityDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -274,14 +361,14 @@
         "IsRequired": true
       },
       {
-        "Name": "availability",
-        "Type": "MediTrack.Models.DoctorAvailability",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateDoctorAvailabilityDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.DoctorAvailability",
+        "Type": "MediTrack.DTOs.DoctorAvailabilityDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -323,7 +410,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.DoctorAvailability, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.DoctorAvailabilityDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -343,7 +430,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Doctor, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.DoctorDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -362,14 +449,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "doctor",
-        "Type": "MediTrack.Models.Doctor",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateDoctorDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Doctor",
+        "Type": "MediTrack.DTOs.DoctorDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -395,7 +482,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Doctor",
+        "Type": "MediTrack.DTOs.DoctorDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -419,14 +506,14 @@
         "IsRequired": true
       },
       {
-        "Name": "doctor",
-        "Type": "MediTrack.Models.Doctor",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateDoctorDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Doctor",
+        "Type": "MediTrack.DTOs.DoctorDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -461,14 +548,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoice",
-        "Type": "MediTrack.Models.Invoice",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateInvoiceDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Invoice",
+        "Type": "MediTrack.DTOs.InvoiceDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -494,7 +581,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Invoice",
+        "Type": "MediTrack.DTOs.InvoiceDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -518,14 +605,14 @@
         "IsRequired": true
       },
       {
-        "Name": "status",
-        "Type": "System.String",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateInvoiceStatusDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Invoice",
+        "Type": "MediTrack.DTOs.InvoiceDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -551,7 +638,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Invoice, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.InvoiceDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -570,14 +657,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "test",
-        "Type": "MediTrack.Models.LabTest",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateLabTestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.LabTest",
+        "Type": "MediTrack.DTOs.LabTestDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -603,7 +690,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.LabTest",
+        "Type": "MediTrack.DTOs.LabTestDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -627,14 +714,14 @@
         "IsRequired": true
       },
       {
-        "Name": "test",
-        "Type": "MediTrack.Models.LabTest",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateLabTestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.LabTest",
+        "Type": "MediTrack.DTOs.LabTestDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -660,7 +747,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.LabTest, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.LabTestDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -679,14 +766,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "record",
-        "Type": "MediTrack.Models.MedicalRecord",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateMedicalRecordDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.MedicalRecord",
+        "Type": "MediTrack.DTOs.MedicalRecordDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -712,7 +799,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.MedicalRecord",
+        "Type": "MediTrack.DTOs.MedicalRecordDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -736,14 +823,14 @@
         "IsRequired": true
       },
       {
-        "Name": "record",
-        "Type": "MediTrack.Models.MedicalRecord",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateMedicalRecordDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.MedicalRecord",
+        "Type": "MediTrack.DTOs.MedicalRecordDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -769,7 +856,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.MedicalRecord, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.MedicalRecordDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -788,14 +875,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "message",
-        "Type": "MediTrack.Models.Message",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateMessageDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Message",
+        "Type": "MediTrack.DTOs.MessageDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -821,7 +908,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Message",
+        "Type": "MediTrack.DTOs.MessageDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -849,6 +936,37 @@
   },
   {
     "ContainingType": "MediTrack.Presentation.Controllers.MessagesController",
+    "Method": "UpdateMessageStatus",
+    "RelativePath": "api/Messages/{id}/Read",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateMessageStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediTrack.DTOs.MessageDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediTrack.Presentation.Controllers.MessagesController",
     "Method": "GetConversation",
     "RelativePath": "api/Messages/Conversation",
     "HttpMethod": "GET",
@@ -868,7 +986,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Message, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.MessageDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -887,14 +1005,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "notification",
-        "Type": "MediTrack.Models.Notification",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateNotificationDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Notification",
+        "Type": "MediTrack.DTOs.NotificationDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -920,7 +1038,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Notification",
+        "Type": "MediTrack.DTOs.NotificationDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -942,9 +1060,24 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateNotificationStatusDto",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "MediTrack.DTOs.NotificationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MediTrack.Presentation.Controllers.NotificationsController",
@@ -962,7 +1095,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Notification, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.NotificationDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -982,7 +1115,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Patient, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.PatientDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1001,14 +1134,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "patient",
-        "Type": "MediTrack.Models.Patient",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreatePatientDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Patient",
+        "Type": "MediTrack.DTOs.PatientDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1034,7 +1167,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Patient",
+        "Type": "MediTrack.DTOs.PatientDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1058,14 +1191,14 @@
         "IsRequired": true
       },
       {
-        "Name": "patient",
-        "Type": "MediTrack.Models.Patient",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdatePatientDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Patient",
+        "Type": "MediTrack.DTOs.PatientDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1100,14 +1233,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "payment",
-        "Type": "MediTrack.Models.Payment",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreatePaymentDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Payment",
+        "Type": "MediTrack.DTOs.PaymentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1133,7 +1266,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Payment",
+        "Type": "MediTrack.DTOs.PaymentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1157,14 +1290,14 @@
         "IsRequired": true
       },
       {
-        "Name": "payment",
-        "Type": "MediTrack.Models.Payment",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdatePaymentDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Payment",
+        "Type": "MediTrack.DTOs.PaymentDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1206,7 +1339,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Payment, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.PaymentDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1225,14 +1358,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "detail",
-        "Type": "MediTrack.Models.PrescriptionDetail",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreatePrescriptionDetailDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.PrescriptionDetail",
+        "Type": "MediTrack.DTOs.PrescriptionDetailDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1256,14 +1389,14 @@
         "IsRequired": true
       },
       {
-        "Name": "detail",
-        "Type": "MediTrack.Models.PrescriptionDetail",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdatePrescriptionDetailDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.PrescriptionDetail",
+        "Type": "MediTrack.DTOs.PrescriptionDetailDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1305,7 +1438,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.PrescriptionDetail, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.PrescriptionDetailDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1324,14 +1457,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "prescription",
-        "Type": "MediTrack.Models.Prescription",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreatePrescriptionDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Prescription",
+        "Type": "MediTrack.DTOs.PrescriptionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1357,7 +1490,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Prescription",
+        "Type": "MediTrack.DTOs.PrescriptionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1383,7 +1516,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Prescription, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.PrescriptionDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1403,7 +1536,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.Setting, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.SettingDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1422,14 +1555,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "setting",
-        "Type": "MediTrack.Models.Setting",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.CreateSettingDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Setting",
+        "Type": "MediTrack.DTOs.SettingDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1453,14 +1586,14 @@
         "IsRequired": true
       },
       {
-        "Name": "setting",
-        "Type": "MediTrack.Models.Setting",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UpdateSettingDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Setting",
+        "Type": "MediTrack.DTOs.SettingDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1502,7 +1635,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.Setting",
+        "Type": "MediTrack.DTOs.SettingDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1522,7 +1655,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.Models.User, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediTrack.DTOs.UserDto, MediTrack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1541,14 +1674,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "MediTrack.Models.User",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UserRegisterDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.User",
+        "Type": "MediTrack.DTOs.UserDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1574,7 +1707,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.User",
+        "Type": "MediTrack.DTOs.UserDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1598,14 +1731,14 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
-        "Type": "MediTrack.Models.User",
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UserDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.User",
+        "Type": "MediTrack.DTOs.UserDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1647,7 +1780,33 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediTrack.Models.User",
+        "Type": "MediTrack.DTOs.UserDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediTrack.Presentation.Controllers.UsersController",
+    "Method": "Login",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediTrack.DTOs.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediTrack.DTOs.AuthResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

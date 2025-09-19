@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\",
+  "WorkspaceRootPath": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\repositories\\implementaions\\prescriptiondetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\repositories\\implementaions\\prescriptiondetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\meditrack\\meditrack\\meditrack\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\repositories\\interfaces\\iprescriptiondetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\repositories\\interfaces\\iprescriptiondetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\meditrack\\meditrack\\meditrack\\dtos\\patientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\dtos\\patientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\microservices.net\\meditrack\\meditrack\\services\\implimentations\\prescriptiondetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\services\\implimentations\\prescriptiondetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\meditrack\\meditrack\\meditrack\\migrations\\20250918150211_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\migrations\\20250918150211_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|c:\\users\\dell\\desktop\\meditrack\\meditrack\\meditrack\\data\\mtdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D2A87E2-3DC6-4B22-9C88-96F76FC3493A}|MediTrack\\MediTrack.csproj|solutionrelative:meditrack\\data\\mtdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PrescriptionDetailRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Repositories\\Implementaions\\PrescriptionDetailRepository.cs",
-              "RelativeDocumentMoniker": "MediTrack\\Repositories\\Implementaions\\PrescriptionDetailRepository.cs",
-              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Repositories\\Implementaions\\PrescriptionDetailRepository.cs",
-              "RelativeToolTip": "MediTrack\\Repositories\\Implementaions\\PrescriptionDetailRepository.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T14:11:45.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IPrescriptionDetailRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Repositories\\Interfaces\\IPrescriptionDetailRepository.cs",
-              "RelativeDocumentMoniker": "MediTrack\\Repositories\\Interfaces\\IPrescriptionDetailRepository.cs",
-              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Repositories\\Interfaces\\IPrescriptionDetailRepository.cs",
-              "RelativeToolTip": "MediTrack\\Repositories\\Interfaces\\IPrescriptionDetailRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T14:10:55.591Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -68,16 +46,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PrescriptionDetailService.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\PrescriptionDetailService.cs",
-              "RelativeDocumentMoniker": "MediTrack\\Services\\Implimentations\\PrescriptionDetailService.cs",
-              "ToolTip": "C:\\Users\\Dell\\Desktop\\Microservices.NET\\MediTrack\\MediTrack\\Services\\Implimentations\\PrescriptionDetailService.cs",
-              "RelativeToolTip": "MediTrack\\Services\\Implimentations\\PrescriptionDetailService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwDMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "MediTrack\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwDMAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T12:35:34.276Z",
+              "WhenOpened": "2025-09-19T09:32:49.014Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatientDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\DTOs\\PatientDto.cs",
+              "RelativeDocumentMoniker": "MediTrack\\DTOs\\PatientDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\DTOs\\PatientDto.cs",
+              "RelativeToolTip": "MediTrack\\DTOs\\PatientDto.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAADwvzQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T09:11:17.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250918150211_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Migrations\\20250918150211_InitialCreate.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Migrations\\20250918150211_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Migrations\\20250918150211_InitialCreate.cs",
+              "RelativeToolTip": "MediTrack\\Migrations\\20250918150211_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:02:12.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MTDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Data\\MTDbContext.cs",
+              "RelativeDocumentMoniker": "MediTrack\\Data\\MTDbContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\MediTrack\\MediTrack\\MediTrack\\Data\\MTDbContext.cs",
+              "RelativeToolTip": "MediTrack\\Data\\MTDbContext.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:59:48.448Z"
             }
           ]
         }
